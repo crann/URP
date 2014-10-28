@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URP.Domain", "URP.Domain\URP.Domain.csproj", "{D2BEFFFF-6B1B-474D-88A3-B7A25179C45B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URP.Mvc", "URP.Mvc\URP.Mvc.csproj", "{714B8CA8-1592-4B85-ADD8-3F2BD37F4714}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2BEFFFF-6B1B-474D-88A3-B7A25179C45B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2BEFFFF-6B1B-474D-88A3-B7A25179C45B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2BEFFFF-6B1B-474D-88A3-B7A25179C45B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2BEFFFF-6B1B-474D-88A3-B7A25179C45B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{714B8CA8-1592-4B85-ADD8-3F2BD37F4714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714B8CA8-1592-4B85-ADD8-3F2BD37F4714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{714B8CA8-1592-4B85-ADD8-3F2BD37F4714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{714B8CA8-1592-4B85-ADD8-3F2BD37F4714}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

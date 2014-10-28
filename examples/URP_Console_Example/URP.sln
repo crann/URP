@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URP.DataAccess", "URP.DataAccess\URP.DataAccess.csproj", "{DFCD98FB-3E3E-441E-A5A2-9B7B3CA61B6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URP.Domain", "URP.Domain\URP.Domain.csproj", "{44C92324-9BD9-4A95-8B38-4AFDBF974F5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URP.UI.ConsoleApp", "URP.UI.Console\URP.UI.ConsoleApp.csproj", "{6CAC6A99-E261-4A12-892E-E35651C1DF85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFCD98FB-3E3E-441E-A5A2-9B7B3CA61B6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFCD98FB-3E3E-441E-A5A2-9B7B3CA61B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFCD98FB-3E3E-441E-A5A2-9B7B3CA61B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFCD98FB-3E3E-441E-A5A2-9B7B3CA61B6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44C92324-9BD9-4A95-8B38-4AFDBF974F5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44C92324-9BD9-4A95-8B38-4AFDBF974F5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44C92324-9BD9-4A95-8B38-4AFDBF974F5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44C92324-9BD9-4A95-8B38-4AFDBF974F5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CAC6A99-E261-4A12-892E-E35651C1DF85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CAC6A99-E261-4A12-892E-E35651C1DF85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CAC6A99-E261-4A12-892E-E35651C1DF85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CAC6A99-E261-4A12-892E-E35651C1DF85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

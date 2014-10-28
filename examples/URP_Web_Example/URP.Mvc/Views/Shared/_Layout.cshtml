@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>URP</title>
+    
+    <link href="~/Content/Site.less" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            
+            <div class="navbar-header">
+                @Html.ActionLink("Countries Manager", "Index", "Countries", null, new { @class = "navbar-brand" })
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+
+        <footer class="footer">
+            <hr />
+            <p>&copy; ASP.Net MVC 5 Example - Demonstrates the Unit of Work and Repository Patterns with Entity Framework 6</p>
+        </footer>
+    </div>
+    
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-animate.min.js"></script>
+
+    <script src="~/Scripts/angular/urp-app.js"></script>
+    <script src="~/Scripts/angular/controllers/home-controller.js"></script>
+    <script src="~/Scripts/angular/controllers/countries/details-controller.js"></script>
+    <script src="~/Scripts/angular/controllers/countries/add-controller.js"></script>
+    <script src="~/Scripts/angular/controllers/countries/edit-controller.js"></script>
+
+</body>
+</html>
