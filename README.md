@@ -10,7 +10,7 @@ This application inserts country data into the database, selects, updates and fi
 Technologies used:
 - Microsoft .Net 4.5
 - Entity Framework 6.1.1
-- Unity x
+- Unity 3.5
 
 ##### Example Two (dev still in progress)
 A web application located in the [examples/URP_Mvc_App] folder.
@@ -39,4 +39,5 @@ Convert the URP.DataAccess project into a Visual Studio template. The template w
 I originally grabbed the implementations for the patterns from the articles below, so a huge thanks to the coder that wrote them:
 
 http://weblogs.asp.net/shijuvarghese/archive/2011/01/06/developing-web-apps-using-asp-net-mvc-3-razor-and-ef-code-first-part-1.aspx
+
 http://weblogs.asp.net/shijuvarghese/archive/2011/01/06/developing-web-apps-using-asp-net-mvc-3-razor-and-ef-code-first-part-2.aspx
