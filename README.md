@@ -12,7 +12,7 @@ Technologies used:
 - Entity Framework 6.1.1
 - Unity 3.5
 
-##### Example Two (dev still in progress)
+##### Example Two (under construction)
 A web application located in the [examples/URP_Mvc_App] folder.
 
 This application allows the user to insert, update and delete country records through a web based GUI.
