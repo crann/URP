@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,10 +59,7 @@
     <Compile Include="Scaffolding\IRepository.cs" />
     <Compile Include="Scaffolding\IUnitOfWork.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DatabaseScripts\ReferenceData\" />
-    <Folder Include="DatabaseScripts\TestData\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

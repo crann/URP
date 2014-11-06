@@ -42,7 +42,7 @@ namespace URP.UI.ConsoleApp
             List<Country> countries = countryRepository.GetAll().ToList();
             foreach (var c in countries)
             {
-                Console.Write("{0} exists in the database with an Id of [{1}] a Code of [{2}] and a telephone code of [{3}]",
+                Console.WriteLine("{0} exists in the database with an Id of [{1}] a Code of [{2}] and a telephone code of [{3}]",
                               c.Name,
                               c.CountryId,
                               c.Code,

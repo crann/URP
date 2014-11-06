@@ -1,34 +1,38 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Linq;
+using System.Web.Mvc;
+using URP.DataAccess.Scaffolding;
+using URP.Domain.Entities;
 
 namespace URP.Mvc.Controllers
 {
     public class CountriesController : Controller
     {
+        private readonly IRepository<Country> countryRepository;
+
         /// <summary>
-        /// GET: /Countries
+        /// Constructor to initialise the controllers resources.
         /// </summary>
-        /// <returns>Countries Details View</returns>
-        public ActionResult Details()
+        public CountriesController(IRepository<Country> countryRepository)
         {
-            return PartialView();
+            this.countryRepository = countryRepository;
         }
 
         /// <summary>
-        /// GET: /Countries/Add 
+        /// GET: /
         /// </summary>
-        /// <returns>Countries Add View</returns>
-        public ActionResult Add()
+        /// <returns>Countries Index View</returns>
+        public ActionResult Index()
         {
-            return PartialView();
-        }
-
-        /// <summary>
-        /// GET: /Countries/Edit 
-        /// </summary>
-        /// <returns>Countries Edit View</returns>
-        public ActionResult Edit()
-        {
-            return PartialView();
+            try
+            {
+                var countries = countryRepository.GetAll().ToList();
+                return View();
+            }
+            catch (Exception ex)
+            {
+                return View();   
+            }
         }
     }
 }
