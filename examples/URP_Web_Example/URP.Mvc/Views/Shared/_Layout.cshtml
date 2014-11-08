@@ -11,17 +11,17 @@
     
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
-<body>
+<body ng-app="urpApp">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             
             <div class="navbar-header">
-                @Html.ActionLink("Countries Manager", "Index", "Countries", null, new { @class = "navbar-brand" })
+                @Html.ActionLink("Movie Manager", "Index", "Movies", null, new { @class = "navbar-brand" })
             </div>
         </div>
     </div>
 
-    <div class="container body-content">
+    <div class="container">
         @RenderBody()
 
         <footer class="footer">
@@ -38,6 +38,7 @@
     <script src="~/Scripts/angular-animate.min.js"></script>
 
     <script src="~/Scripts/angular/urp-app.js"></script>
-    <script src="~/Scripts/angular/controllers/countries-controller.js"></script>
+    
+    @RenderSection("ViewSpecificScripts", false)
 </body>
 </html>

@@ -5,7 +5,7 @@ namespace URP.DataAccess.Scaffolding.Implementation
 {
     public class ApplicationContext : DbContext
     {
-        public DbSet<Country> Countries { get; set; }
+        public DbSet<Movie> Movies { get; set; }
 
         /// <summary>
         /// Commits this instance.

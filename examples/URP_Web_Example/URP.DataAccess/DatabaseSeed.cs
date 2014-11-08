@@ -25,9 +25,9 @@ namespace URP.DataAccess
         /// </summary>
         private void LoadTestData(ApplicationContext context)
         {
-            // Test Data - Insert [Country] data into the database.
+            // Test Data - Insert [Movie] data into the database.
             string appDataPath = AppDomain.CurrentDomain.GetData("DataDirectory").ToString();
-            string scriptPath = Path.Combine(appDataPath, @"DatabaseScripts\TestData\InsertCountries.sql");
+            string scriptPath = Path.Combine(appDataPath, @"DatabaseScripts\TestData\InsertMovies.sql");
             string sql = File.ReadAllText(scriptPath);
             context.Database.ExecuteSqlCommand(sql);
         }

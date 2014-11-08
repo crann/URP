@@ -12,7 +12,7 @@ namespace URP.Mvc.App_Start
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Countries", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Movies", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

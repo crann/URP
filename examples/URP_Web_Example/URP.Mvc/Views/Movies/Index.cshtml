@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Newtonsoft.Json
+@model IList<URP.Domain.Entities.Movie>
+
+<div ng-controller="moviesCtrl" ng-init="movies=@JsonConvert.SerializeObject(Model)">
+    
+    <a ng-click="onAddMovie()">Add</a>
+    
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Title</th> 
+            <th>Tag Line</th>
+            <th>Length (mins)</th>
+        </tr>
+        
+        <tr ng-repeat="movie in movies">
+            <td ng-bind="movie.MovieId" />
+            <td ng-bind="movie.Title" /> 
+            <td ng-bind="movie.TagLine" />
+            <td ng-bind="movie.Length" />
+        </tr>
+    </table>
+</div>
+
+@section ViewSpecificScripts
+{
+  <script src="~/Scripts/angular/movies/controllers/index-controller.js"></script>
+}

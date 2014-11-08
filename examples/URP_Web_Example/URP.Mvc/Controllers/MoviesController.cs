@@ -6,16 +6,16 @@ using URP.Domain.Entities;
 
 namespace URP.Mvc.Controllers
 {
-    public class CountriesController : Controller
+    public class MoviesController : Controller
     {
-        private readonly IRepository<Country> countryRepository;
+        private readonly IRepository<Movie> movieRepository;
 
         /// <summary>
         /// Constructor to initialise the controllers resources.
         /// </summary>
-        public CountriesController(IRepository<Country> countryRepository)
+        public MoviesController(IRepository<Movie> movieRepository)
         {
-            this.countryRepository = countryRepository;
+            this.movieRepository = movieRepository;
         }
 
         /// <summary>
@@ -26,8 +26,8 @@ namespace URP.Mvc.Controllers
         {
             try
             {
-                var countries = countryRepository.GetAll().ToList();
-                return View();
+                var movies = movieRepository.GetAll().ToList();
+                return View(movies);
             }
             catch (Exception ex)
             {
