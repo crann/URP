@@ -7,23 +7,92 @@
 
 <div ng-controller="moviesCtrl" ng-init="movies=@JsonConvert.SerializeObject(Model)">
     
-    <a ng-click="onAddMovie()">Add</a>
-    
-    <table class="table">
-        <tr>
-            <th>Id</th>
-            <th>Title</th> 
-            <th>Tag Line</th>
-            <th>Length (mins)</th>
-        </tr>
+    <div id="commandRow" class="row">
+        <div class="col-sm-12">
+            <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#addMovieModal">
+                <span class="glyphicon glyphicon-plus"></span>
+                <span>Add</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="dataRow" class="row">
+        <div class="col-sm-12">
+            <table class="table">
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th> 
+                    <th>Tag Line</th>
+                    <th>Length (mins)</th>
+                    <th></th>
+                </tr>
         
-        <tr ng-repeat="movie in movies">
-            <td ng-bind="movie.MovieId" />
-            <td ng-bind="movie.Title" /> 
-            <td ng-bind="movie.TagLine" />
-            <td ng-bind="movie.Length" />
-        </tr>
-    </table>
+                <tr ng-repeat="movie in movies">
+                    <td ng-bind="movie.MovieId" />
+                    <td ng-bind="movie.Title" /> 
+                    <td ng-bind="movie.TagLine" />
+                    <td ng-bind="movie.Length" />
+                    <td class="movieDataControls">
+                        <span class="pull-right">
+                            <a><span class="glyphicon glyphicon-pencil"></span></a>
+                            <span>&nbsp;</span>
+                            <a><span class="glyphicon glyphicon-trash"></span></a>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Add Movie Modal -->
+    <div class="modal fade" id="addMovieModal" tabindex="-1" role="dialog" aria-labelledby="AddMovieModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+        
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="addMovieModalTitle">Add Movie</h4>
+                </div>
+        
+                <div class="modal-body">
+                    @Html.Partial("Partials/MovieEditor")
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" ng-click="onSaveNewMovie()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Movie Modal -->
+    <div class="modal fade" id="editMovieModal" tabindex="-1" role="dialog" aria-labelledby="EditMovieModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+        
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="editMovieModalTitle">Add Movie</h4>
+                </div>
+        
+                <div class="modal-body">
+                    @Html.Partial("Partials/MovieEditor")
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" ng-click="onSaveUpdatedMovie()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @section ViewSpecificScripts

@@ -1,44 +1,44 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>URP</title>
+        <title>URP</title>
     
-    <link href="~/Content/Site.less" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/Site.less" rel="stylesheet" type="text/css" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
-</head>
-<body ng-app="urpApp">
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    </head>
+
+    <body ng-app="urpApp">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
             
-            <div class="navbar-header">
-                @Html.ActionLink("Movie Manager", "Index", "Movies", null, new { @class = "navbar-brand" })
+                <div class="navbar-header">
+                    @Html.ActionLink("Movie Manager", "Index", "Movies", null, new { @class = "navbar-brand" })
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-        @RenderBody()
+        <div class="container">
+            @RenderBody()
 
-        <footer class="footer">
-            <hr />
-            <p>&copy; ASP.Net MVC 5 Example - Demonstrates the Unit of Work and Repository Patterns with Entity Framework 6</p>
-        </footer>
-    </div>
+            <footer class="footer">
+                <p>&copy; ASP.Net MVC 5 Example - Demonstrates the Unit of Work and Repository Patterns with Entity Framework 6</p>
+            </footer>
+        </div>
     
-    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
     
-    <script src="~/Scripts/angular.min.js"></script>
-    <script src="~/Scripts/angular-route.min.js"></script>
-    <script src="~/Scripts/angular-animate.min.js"></script>
+        <script src="~/Scripts/angular.min.js"></script>
+        <script src="~/Scripts/angular-route.min.js"></script>
+        <script src="~/Scripts/angular-animate.min.js"></script>
 
-    <script src="~/Scripts/angular/urp-app.js"></script>
+        <script src="~/Scripts/angular/urp-app.js"></script>
     
-    @RenderSection("ViewSpecificScripts", false)
-</body>
+        @RenderSection("ViewSpecificScripts", false)
+    </body>
 </html>
