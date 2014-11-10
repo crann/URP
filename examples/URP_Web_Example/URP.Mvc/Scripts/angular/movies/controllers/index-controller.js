@@ -1,30 +1,36 @@
 ﻿urpApp.controller('moviesCtrl', ['$scope', '$http', function ($scope, $http) {
 
     $scope.onOpenAddNewMovieModal = function() {
+        // Reset the input fields.
+        $scope.movieEditorData.Title = null;
+        $scope.movieEditorData.TagLine = null;
+        $scope.movieEditorData.Length = 0;
         
-    };
+        // Display the dialog.
 
-    $scope.movie = {
-        Title: "test title",
-        TagLine: "test tagline",
-        Length: 130
     };
     
     $scope.onSaveNewMovie = function() {
-        console.log("here");
-
-        var url = 'http://localhost:49388/movies/add';
-
         $http({
             method: 'POST',
-            url: url,
+            url: 'http://localhost:49388/movies/add',
             dataType: 'json',
-            data: angular.toJson($scope.movie),
+            data: angular.toJson($scope.movieEditorData),
             headers: { 'Content-Type': 'application/json' }
         }).success(function (data, status, headers, config) {
+
+            $scope.movies.push({
+                MovieId: data.MovieId,
+                Title: $scope.movieEditorData.Title,
+                TagLine: $scope.movieEditorData.TagLine,
+                Length: $scope.movieEditorData.Length
+            });
+            
             $scope.onCloseAddNewMovieModal();
+            
         }).error(function (data, status, headers, config) {
-            $scope.onCloseAddNewMovieModal();
+            // Ideally the api would provide some detailed error info, which can be
+            // formatted and displayed.
         });
     };
     

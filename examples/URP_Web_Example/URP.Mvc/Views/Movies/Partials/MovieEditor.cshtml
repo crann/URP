@@ -1,16 +1,16 @@
 ﻿<form role="form">
     <div class="form-group">
         <label for="titleInput">Title</label>
-        <input ng-value="movie.Title" type="text" class="form-control" id="titleInput" placeholder="Enter title">
+        <input ng-model="movieEditorData.Title" type="text" class="form-control" id="titleInput" placeholder="Enter title">
     </div>
   
     <div class="form-group">
         <label for="tagLineInput">Tag Line</label>
-        <input ng-model="movie.TagLine" type="text" class="form-control" id="tagLineInput" placeholder="Enter tag line">
+        <input ng-model="movieEditorData.TagLine" type="text" class="form-control" id="tagLineInput" placeholder="Enter tag line">
     </div>
             
     <div class="form-group">
         <label for="tagLineInput">Length</label>
-        <input ng-model="movie.Length" type="number" class="form-control" id="lengthInput" placeholder="Enter length">
+        <input ng-model="movieEditorData.Length" type="number" class="form-control" id="lengthInput" placeholder="Enter length">
     </div>
 </form>
