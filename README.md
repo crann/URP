@@ -5,7 +5,7 @@ This repo is a reminder for me on how to implement the Unit of Work and Reposito
 ##### Example One
 A console application located in the [examples/URP_Console_App] folder. 
 
-This application inserts country data into the database, selects, updates and finally deletes the country data. This demonstrates the basic CRUD operations using the repository pattern.
+This application inserts country data into a database, selects, updates and finally deletes the country data. This demonstrates the basic CRUD operations using the repository pattern.
 
 Technologies used:
 - Microsoft .Net 4.5
@@ -15,7 +15,7 @@ Technologies used:
 ##### Example Two (under construction)
 A web application located in the [examples/URP_Mvc_App] folder.
 
-This application allows the user to insert, update and delete country records through a web based GUI.
+This application allows the user to insert, update and delete movie data into a database through a web based GUI. It also demonstrates how to seed a database on the application's first run.
 (There's no paging, validation or funky functionality as this is intended to be a basic demonstration of the unit of work and repository pattern in a web application).
 
 Technologies used:
