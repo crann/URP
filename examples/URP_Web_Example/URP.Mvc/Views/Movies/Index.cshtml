@@ -34,9 +34,13 @@
                     <td ng-bind="movie.Length" />
                     <td class="movieDataControls">
                         <span class="pull-right">
-                            <a><span class="glyphicon glyphicon-pencil"></span></a>
+                            <a ng-click="onOpenEditMovieModal(movie)">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a>
                             <span>&nbsp;</span>
-                            <a><span class="glyphicon glyphicon-trash"></span></a>
+                            <a ng-click="onDeleteMovie(movie.MovieId)">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </a>
                         </span>
                     </td>
                 </tr>
