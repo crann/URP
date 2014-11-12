@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Microsoft.Practices.Unity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Practices.Unity;
 using URP.DataAccess.Scaffolding;
 using URP.Domain.Entities;
 
@@ -25,7 +25,6 @@ namespace URP.UI.ConsoleApp
             Console.WriteLine("Adding the United Kingdom to the repository, but with a spelling mistake.");
             var country = new Country
                 {   
-                    Code = "GBP",
                     Name = "United Kingdon",
                     TelephoneCode = "+44"
 
@@ -42,10 +41,9 @@ namespace URP.UI.ConsoleApp
             List<Country> countries = countryRepository.GetAll().ToList();
             foreach (var c in countries)
             {
-                Console.WriteLine("{0} exists in the database with an Id of [{1}] a Code of [{2}] and a telephone code of [{3}]",
+                Console.WriteLine("{0} exists in the database with an Id of [{1}] and a telephone code of [{2}]",
                               c.Name,
                               c.CountryId,
-                              c.Code,
                               c.TelephoneCode);
             }
 
@@ -56,10 +54,9 @@ namespace URP.UI.ConsoleApp
 
             // Use a fresh object to prove that the updates have been committed to the repository.
             Country updatedCountry = countryRepository.GetById(country.CountryId);
-            Console.WriteLine("{0} exists in the database with an Id of [{1}] a Code of [{2}] and a telephone code of [{3}]",
+            Console.WriteLine("{0} exists in the database with an Id of [{1}] and a telephone code of [{2}]",
                           updatedCountry.Name,
                           updatedCountry.CountryId,
-                          updatedCountry.Code,
                           updatedCountry.TelephoneCode);
 
             Console.WriteLine("Now delete the country from the repository.");

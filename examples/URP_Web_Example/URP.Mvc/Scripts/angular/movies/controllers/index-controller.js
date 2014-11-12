@@ -1,16 +1,17 @@
-﻿urpApp.controller('moviesCtrl', ['$scope', '$http', function ($scope, $http) {
+﻿moviesApp.controller('moviesCtrl', ['$scope', '$http', function ($scope, $http) {
+
+    $scope.movieEditorData = {};
 
     $scope.onOpenAddNewMovieModal = function() {
         $scope.resetEditor();
-        
-        // Display the dialog.
-
+        // Move to angular directive.
+        $('#addMovieModal').modal('show');
     };
     
     $scope.onSaveNewMovie = function() {
         $http({
             method: 'POST',
-            url: 'http://localhost:49388/movies/add',
+            url: '/movies/add',
             dataType: 'json',
             data: angular.toJson($scope.movieEditorData),
             headers: { 'Content-Type': 'application/json' }
@@ -32,24 +33,33 @@
     };
     
     $scope.onCloseAddNewMovieModal = function () {
-
+        // Move to angular directive.
+        $('#addMovieModal').modal('hide');
     };
 
     $scope.onOpenEditMovieModal = function (movie) {
         $scope.resetEditor();
         $scope.loadEditor(movie);
+        
+        // Move to angular directive.
+        $('#editMovieModal').modal('show');
     };
     
     $scope.onSaveUpdatedMovie = function () {
         $http({
             method: 'POST',
-            url: 'http://localhost:49388/movies/update',
+            url: '/movies/update',
             dataType: 'json',
             data: angular.toJson($scope.movieEditorData),
             headers: { 'Content-Type': 'application/json' }
         }).success(function (data, status, headers, config) {
 
-            
+            $scope.movies.forEach(function (movie) {
+                if (movie.MovieId === $scope.movieEditorData.MovieId) {
+                    $scope.updateMovieFromEditor(movie);
+                }
+            });
+
             $scope.onCloseEditMovieModal();
 
         }).error(function (data, status, headers, config) {
@@ -59,13 +69,14 @@
     };
     
     $scope.onCloseEditMovieModal = function () {
-
+        // Move to angular directive.
+        $('#editMovieModal').modal('hide');
     };
 
     $scope.onDeleteMovie = function (movieId) {
         $http({
             method: 'POST',
-            url: 'http://localhost:49388/movies/delete',
+            url: '/movies/delete',
             dataType: 'json',
             data: { id: movieId },
             headers: { 'Content-Type': 'application/json' }
@@ -95,9 +106,16 @@
         $scope.movieEditorData.Length = 0;
     };
 
-    $scope.loadEditor = function(movie) {
+    $scope.loadEditor = function (movie) {
+        $scope.movieEditorData.MovieId = movie.MovieId;
         $scope.movieEditorData.Title = movie.Title;
         $scope.movieEditorData.TagLine = movie.TagLine;
         $scope.movieEditorData.Length = movie.Length;
+    };
+
+    $scope.updateMovieFromEditor = function(movie) {
+        movie.Title = $scope.movieEditorData.Title;
+        movie.TagLine = $scope.movieEditorData.TagLine;
+        movie.Length = $scope.movieEditorData.Length;
     };
 }])

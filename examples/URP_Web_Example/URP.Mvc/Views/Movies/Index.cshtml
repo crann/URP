@@ -5,94 +5,96 @@
 @using Newtonsoft.Json
 @model IList<URP.Domain.Entities.Movie>
 
-<div ng-controller="moviesCtrl" ng-init="movies=@JsonConvert.SerializeObject(Model)">
+<div ng-app="moviesApp">
+    <div ng-controller="moviesCtrl" ng-init="movies=@JsonConvert.SerializeObject(Model)">
     
-    <div id="commandRow" class="row">
-        <div class="col-sm-12">
-            <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#addMovieModal">
-                <span class="glyphicon glyphicon-plus"></span>
-                <span>Add</span>
-            </button>
+        <div id="commandRow" class="row">
+            <div class="col-sm-12">
+                <button type="button" ng-click="onOpenAddNewMovieModal()" class="btn btn-default pull-right">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span>Add</span>
+                </button>
+            </div>
         </div>
-    </div>
 
-    <div id="dataRow" class="row">
-        <div class="col-sm-12">
-            <table class="table">
-                <tr>
-                    <th>Id</th>
-                    <th>Title</th> 
-                    <th>Tag Line</th>
-                    <th>Length (mins)</th>
-                    <th></th>
-                </tr>
+        <div id="dataRow" class="row">
+            <div class="col-sm-12">
+                <table class="table">
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th> 
+                        <th>Tag Line</th>
+                        <th>Length (mins)</th>
+                        <th></th>
+                    </tr>
         
-                <tr ng-repeat="movie in movies">
-                    <td ng-bind="movie.MovieId" />
-                    <td ng-bind="movie.Title" /> 
-                    <td ng-bind="movie.TagLine" />
-                    <td ng-bind="movie.Length" />
-                    <td class="movieDataControls">
-                        <span class="pull-right">
-                            <a ng-click="onOpenEditMovieModal(movie)">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                            </a>
-                            <span>&nbsp;</span>
-                            <a ng-click="onDeleteMovie(movie.MovieId)">
-                                <span class="glyphicon glyphicon-trash"></span>
-                            </a>
-                        </span>
-                    </td>
-                </tr>
-            </table>
+                    <tr ng-repeat="movie in movies">
+                        <td ng-bind="movie.MovieId" />
+                        <td ng-bind="movie.Title" /> 
+                        <td ng-bind="movie.TagLine" />
+                        <td ng-bind="movie.Length" />
+                        <td class="movieDataControls">
+                            <span class="pull-right">
+                                <a ng-click="onOpenEditMovieModal(movie)">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </a>
+                                <span>&nbsp;</span>
+                                <a ng-click="onDeleteMovie(movie.MovieId)">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-    </div>
 
-    <!-- Add Movie Modal -->
-    <div class="modal fade" id="addMovieModal" tabindex="-1" role="dialog" aria-labelledby="AddMovieModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <!-- Add Movie Modal -->
+        <div class="modal fade" id="addMovieModal" tabindex="-1" role="dialog" aria-labelledby="AddMovieModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
         
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <h4 class="modal-title" id="addMovieModalTitle">Add Movie</h4>
-                </div>
+                    <div class="modal-header">
+                        <button type="button" ng-click="onCloseEditMovieModal" class="close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title" id="addMovieModalTitle">Add Movie</h4>
+                    </div>
         
-                <div class="modal-body">
-                    @Html.Partial("Partials/MovieEditor")
-                </div>
+                    <div class="modal-body">
+                        @Html.Partial("Partials/MovieEditor")
+                    </div>
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" ng-click="onSaveNewMovie()">Save</button>
+                    <div class="modal-footer">
+                        <button type="button" ng-click="onCloseAddMovieModal()" class="btn btn-default" >Cancel</button>
+                        <button type="button" ng-click="onSaveNewMovie()" class="btn btn-primary">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Edit Movie Modal -->
-    <div class="modal fade" id="editMovieModal" tabindex="-1" role="dialog" aria-labelledby="EditMovieModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <!-- Edit Movie Modal -->
+        <div class="modal fade" id="editMovieModal" tabindex="-1" role="dialog" aria-labelledby="EditMovieModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
         
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <h4 class="modal-title" id="editMovieModalTitle">Add Movie</h4>
-                </div>
+                    <div class="modal-header">
+                        <button type="button" ng-click="onCloseEditMovieModal()" class="close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title" id="editMovieModalTitle">Edit Movie</h4>
+                    </div>
         
-                <div class="modal-body">
-                    @Html.Partial("Partials/MovieEditor")
-                </div>
+                    <div class="modal-body">
+                        @Html.Partial("Partials/MovieEditor")
+                    </div>
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" ng-click="onSaveUpdatedMovie()">Save</button>
+                    <div class="modal-footer">
+                        <button type="button" ng-click="onCloseEditMovieModal()" class="btn btn-default">Cancel</button>
+                        <button type="button" ng-click="onSaveUpdatedMovie()" class="btn btn-primary">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -101,5 +103,6 @@
 
 @section ViewSpecificScripts
 {
-  <script src="~/Scripts/angular/movies/controllers/index-controller.js"></script>
+    <script src="~/Scripts/angular/movies/movies-app.js"></script>
+    <script src="~/Scripts/angular/movies/controllers/index-controller.js"></script>
 }

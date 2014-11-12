@@ -122,8 +122,8 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular\movies\movies-app.js" />
     <Content Include="Scripts\angular\movies\controllers\index-controller.js" />
-    <Content Include="Scripts\angular\urp-app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
