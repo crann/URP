@@ -34,6 +34,7 @@
     
     $scope.onCloseAddNewMovieModal = function () {
         // Move to angular directive.
+
         $('#addMovieModal').modal('hide');
     };
 

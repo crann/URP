@@ -35,13 +35,9 @@
                         <td ng-bind="movie.Length" />
                         <td class="movieDataControls">
                             <span class="pull-right">
-                                <a ng-click="onOpenEditMovieModal(movie)">
-                                    <span class="glyphicon glyphicon-pencil"></span>
-                                </a>
+                                <a ng-click="onOpenEditMovieModal(movie)" class="glyphicon glyphicon-pencil"></a>
                                 <span>&nbsp;</span>
-                                <a ng-click="onDeleteMovie(movie.MovieId)">
-                                    <span class="glyphicon glyphicon-trash"></span>
-                                </a>
+                                <a ng-click="onDeleteMovie(movie.MovieId)" class="glyphicon glyphicon-trash"></a>
                             </span>
                         </td>
                     </tr>
@@ -67,7 +63,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" ng-click="onCloseAddMovieModal()" class="btn btn-default" >Cancel</button>
+                        <button type="button" ng-click="onCloseAddNewMovieModal()" class="btn btn-default" >Cancel</button>
                         <button type="button" ng-click="onSaveNewMovie()" class="btn btn-primary">Save</button>
                     </div>
                 </div>
