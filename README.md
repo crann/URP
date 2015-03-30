@@ -12,7 +12,7 @@ Technologies used:
 - Entity Framework 6.1.1
 - Unity 3.5
 
-##### Example Two (under construction)
+##### Example Two
 A web application located in the [examples/URP_Mvc_App] folder.
 
 This application allows the user to insert, update and delete movie data into a database through a web based GUI. It also demonstrates how to seed a database on the application's first run.
